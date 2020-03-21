@@ -9,6 +9,7 @@ public class LinkedList{
         }
     }
     Node head;
+    //adding node at the front of the list
     void insertFront(int data){
         Node newNode = new Node(data);
         if(head == null){
@@ -18,6 +19,7 @@ public class LinkedList{
         newNode.next = head;
         head = newNode;
     }
+    //adding node at the last of the list
     void insertLast(int data){
         Node newNode = new Node(data);
         if(head == null){
@@ -30,6 +32,7 @@ public class LinkedList{
         }
         temp.next = newNode;
     }
+    //getting the length of the list
     int getLength(){
         int len = 0;
         Node temp = head;
@@ -39,6 +42,7 @@ public class LinkedList{
         }
         return len;
     }
+    //insert at any position in the list
     void insertMiddle(int data, int position){
         if(position < 0 || position > getLength()){
             System.out.println("Invalid Legth");
@@ -54,6 +58,7 @@ public class LinkedList{
         newNode.next = temp.next;
         temp.next = newNode;
     }
+    //print the list
     void printList(){
         if(head == null){
             System.out.println("List is Empty");
@@ -67,6 +72,7 @@ public class LinkedList{
         }
         System.out.println();
     }
+    //delete node from front of the list
     void deleteFront(){
         if(head == null){
             System.out.println("List is Empty");
@@ -74,6 +80,7 @@ public class LinkedList{
         }
         head = head.next;
     }
+    //delete node from the end of the list
     void deleteLast(){
         if(head == null){
             System.out.println("List is Empty");
@@ -85,6 +92,7 @@ public class LinkedList{
         }
         temp.next = null;
     }
+    //main to test the functions
     public static void main(String args[]){
         LinkedList list = new LinkedList();
         Scanner in = new Scanner(System.in);
