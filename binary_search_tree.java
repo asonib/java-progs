@@ -35,6 +35,22 @@ class binary_search_tree{
         preOrder(root.left);
         preOrder(root.right);
     }
+    void inOrder(Node root){
+        if(root == null){
+            return;
+        }
+        preOrder(root.left);
+        System.out.print(root.data+" ");
+        preOrder(root.right);
+    }
+    void postOrder(Node root){
+        if(root == null){
+            return;
+        }
+        preOrder(root.right);
+        System.out.print(root.data+" ");
+        preOrder(root.left);
+    }
     public static void main(String args[]){
         Node root = null;
         binary_search_tree tree = new binary_search_tree();
@@ -43,14 +59,14 @@ class binary_search_tree{
         root  = tree.insertNode(root, 15);
         root  = tree.insertNode(root, 25);
         root  = tree.insertNode(root, 7);
-        
+        //print Pre Order
         tree.preOrder(root);
         System.out.println();
-
-        // tree.inOrder(root);
-        // System.out.println();
-
-        // tree.postOrder(root);
-        // System.out.println();
+        //print In Order
+        tree.inOrder(root);
+        System.out.println();
+        //print Post Order
+        tree.postOrder(root);
+        System.out.println();
     }
 }
