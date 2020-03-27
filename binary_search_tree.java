@@ -27,6 +27,22 @@ class binary_search_tree{
 
 
     }
+    void search(Node root, int val){
+        if(root == null){
+            System.out.println("Tree Empty");
+            return;
+        }
+        else if(root.data == val){
+            System.out.println("Value Found in the tree");
+        }
+        else if(root.data > val){
+            search(root.left, val);
+        }
+        else if(root.data < val){
+            search(root.right, val);
+        }
+
+    }
     void preOrder(Node root){
         if(root == null){
             return;
@@ -59,6 +75,7 @@ class binary_search_tree{
         root  = tree.insertNode(root, 15);
         root  = tree.insertNode(root, 25);
         root  = tree.insertNode(root, 7);
+        
         //print Pre Order
         tree.preOrder(root);
         System.out.println();
@@ -68,5 +85,12 @@ class binary_search_tree{
         //print Post Order
         tree.postOrder(root);
         System.out.println();
+
+        //searching for value
+        int val1 = 51;
+        tree.search(root, val1);
+        //searching for value
+        int val2 = 7;
+        tree.search(root, val2);
     }
 }
